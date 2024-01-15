@@ -116,6 +116,20 @@ Finally, if you look in `lib/Unit/Unit.h`, there is a line in there;
 
 This defined the address of the unit, so the control unit can communicate with it, these all need to be unique but we only need to worry what this is set to when we plug all the modules in together, but it is worth noting where this is set. 
 
+## Uploading Your Code 
+
+There may be some steps you need to do before you can upload your code depending on the board you are using, it's a good idea to Google `[your board name] Platform IO` for details. 
+
+This guide will describe how to upload to the Raspberry Pi Pico. 
+
+For the Pico, you must plug in your Pico via micro USB **WHILST** pressing the button located on top of the board, a USB mass storage device should appear. 
+
+On the `Platform IO` tab again in VS Code, under `Project Tasks`, click `Upload`, this should the same for all boards. 
+
+<img src="docs/UploadPico.png" />
+
+For the Pico, the mass storage device should dismount automatically and your Pico should start running the code immediately, with the LED flashing rapidly. To re-upload you should redo the pressing the button and plugging in the USB again before re-uploading. 
+
 Happy Hacking! 
 
 ## Other Boards 
