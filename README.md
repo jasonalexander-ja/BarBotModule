@@ -16,10 +16,14 @@ To get started you will need a few things:
 - This is built using the PlatformIO extension for Visual Studio (VS) Code:
     - Make sure you have VS Code installed from [code.visualstudio.com](code.visualstudio.com). 
     - Once installed, open VS Code and in the Extensions tab search for `Platform IO` and install:
+
     <img src="docs/InstallExtension.png" />
+    
 - Download this repository from GitHub via your preferred choice then open the parent folder of it in VS Code. 
     - You can do this by going to File->Open Folder. 
+
     <img src="docs/OpenFolder.png" />
+
     - Select the folder for this repository and Platform IO should load it in. 
 
 This project is for the Raspberry Pi Pico, but since it is built on the Arduino framework it will work for any other board. See [Other Boards](#other-boards)
@@ -125,11 +129,13 @@ To make a new Platform IO project.
 - In the new `PIO Home` window, select `+ New Project`
 - Give it a name & search + select a board, here we are using the Arduino Uno
 - Make sure the `Framework` is set to `Arduino`
+
 <img src="docs/NewProject.png" />
 
 Once the project is created, copy over the `src` and `lib` folders from the template repositories root folder to the new projects root folder, making sure to copy all the files in them.
 
 You can drag and drop folders and files between VS Code windows, just make sure to select `Copy Folder` if a dialog pops up. 
+
 <img src="docs/CopyDialog.png" />
 
 Everything from then on should be the same between boards, it may be worth looking up `[your boards name] + Platform IO` for any information that might be useful for using your board of choice in Platform IO (such as uploading code ext.). 
