@@ -146,10 +146,8 @@ To make a new Platform IO project.
 
 <img src="docs/NewProject.png" />
 
-Once the project is created, copy over the `src` and `lib` folders from the template repositories root folder to the new projects root folder, making sure to copy all the files in them.
+Once the project is created, open the `platform.ini` file, this contains all the deatils about the board, framework ext. for Platform IO, just copy the conetents from the new project to the `platform.ini` in this project. 
 
-You can drag and drop folders and files between VS Code windows, just make sure to select `Copy Folder` if a dialog pops up. 
-
-<img src="docs/CopyDialog.png" />
+<img src="docs/PlatformIni.png" />
 
 Everything from then on should be the same between boards, it may be worth looking up `[your boards name] + Platform IO` for any information that might be useful for using your board of choice in Platform IO (such as uploading code ext.). 
