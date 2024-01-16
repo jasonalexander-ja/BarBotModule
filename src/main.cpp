@@ -13,7 +13,7 @@ and ignore this file.
 
 uint8_t option = 0;
 bool isRunning = false;
-char lastRunResult = 0;
+uint8_t lastRunResult = 0;
 
 void receiveEvent(int howMany);
 void requestEvent();
@@ -51,6 +51,6 @@ void receiveEvent(int howMany)
 
 void requestEvent()
 {
-	char result[2] = { isRunning ? 0 : 1, lastRunResult };
-	Wire.write(result);
+	uint8_t result[2] = { !isRunning, lastRunResult };
+	Wire.write(result, 2);
 }
