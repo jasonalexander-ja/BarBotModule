@@ -12,7 +12,8 @@ and ignore this file.
 
 
 uint8_t option = 0;
-bool concurrentLock = false;
+bool isRunning = false;
+uint8_t lastRunResult = 0;
 
 void receiveEvent(int howMany);
 void requestEvent();
@@ -29,32 +30,27 @@ void setup()
 void loop()
 {
 	digitalWrite(LED_BUILTIN, HIGH);
-	delay(100);
+	delay(50);
+	if (isRunning)
+	{
+		lastRunResult = performAction(option);
+		isRunning = false;
+	}
 	digitalWrite(LED_BUILTIN, LOW);
-	delay(100);
+	delay(50);
 }
 
 void receiveEvent(int howMany)
 {
-	while (1 < Wire.available())
+	while (0 < Wire.available())
 	{
-		uint8_t c = Wire.read();
+		option = Wire.read();
 	}
-	option = Wire.read();
+	isRunning = true;
 }
 
 void requestEvent()
 {
-	if (concurrentLock)
-		return;
-	concurrentLock = true;
-
-	digitalWrite(LED_BUILTIN, HIGH);
-
-	uint8_t result = performAction(option);
-
-	digitalWrite(LED_BUILTIN, LOW);
-
+	char result[2] = { isRunning, lastRunResult };
 	Wire.write(result);
-	concurrentLock = false;
 }
